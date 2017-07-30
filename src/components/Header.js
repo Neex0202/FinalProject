@@ -29,7 +29,7 @@ const Header = () =>  //  or change to class Header extends React.Component
 								<div className="col s11">
 									<form>
 						        <div className="input-field">
-						          <input id="search" type="search" required>
+						          <input id="search" type="search" required/>
 						          <label className="label-icon" for="search"></label>
 						        </div>
 						      </form>	
