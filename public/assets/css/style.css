@@ -230,4 +230,14 @@ a {
 
 
 
-/* COMMENT SECTION */
+/* CONTACT SECTION */
+
+.contact-div {
+	background-image: url(../img/contact-bg6.png);
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.form-label {
+	color: black;
+}

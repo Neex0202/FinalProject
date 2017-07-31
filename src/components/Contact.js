@@ -7,7 +7,7 @@ class Contact extends React.Component {
 	render() {
 		return (
 			
-			<div>
+			<div className="contact-div">
 				<div className="row">
 					{/* CONTACT SECTION TITLE */}
 					<div className="col s8 left-align">
