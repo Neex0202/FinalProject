@@ -80,11 +80,14 @@ class Intro extends React.Component {
 							        {/* END SUMMARY FIELD */}
 							      </div>
 
+							      <br />
 										
 										{/* SUBMIT BUTTON */}
-										<button className="btn waves-effect waves-light" type="submit" name="action">
-											Submit
-									  </button>
+										<div className="row">
+											<button className="btn-large waves-effect waves-light" type="submit" name="action">
+												Submit
+										  </button>
+									  </div>
 										{/* END SUBMIT BUTTON */}
 
 							    </form>	
