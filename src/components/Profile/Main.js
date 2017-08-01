@@ -1,5 +1,5 @@
 import React from 'react';
-import helper from '../util/helper';
+import helper from '../../util/helper';
 
 import Header from './Header';
 import Background from './Background';

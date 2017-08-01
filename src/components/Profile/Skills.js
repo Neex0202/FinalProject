@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Modal} from 'react-materialize';
-import helper from '../util/helper';
+import helper from '../../util/helper';
 
 
 class Skills extends React.Component {
