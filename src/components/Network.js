@@ -11,82 +11,10 @@ class Network extends React.Component {
 			<div>
 				<div className="row">
 					{/* NETWORK SECTION TITLE */}
-					<div className="col s8 left-align">
+					<div className="col s12 left-align">
 						<h5>NETWORK</h5>
 					</div>
 					{/* END NETWORK SECTION TITLE */}
-
-					{/* EDIT ICON */}
-					<Modal
-							header='Modal Title'
-							fixedFooter
-							trigger={
-								<div className="col s4 right-align">
-									<a href="#"><i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i></a>
-								</div>
-								
-							}> 
-							
-							<div className="row">
-							    <form className="col s12">
-
-							    	<div className="row">
-							      	{/* PROFILE PICTURE UPLOAD */}
-							        <div className="input-field col s12">
-							          <div className="file-field input-field">
-										      <div className="btn red lighten-1">
-										        <span> &nbsp; &nbsp; &nbsp; &nbsp; Choose Profile Picture &nbsp; &nbsp; &nbsp; &nbsp; </span>
-										        <input type="file" />
-										      </div>
-										      <div className="file-path-wrapper">
-										        <input className="file-path validate" type="text" />
-										      </div>
-										    </div>
-							        </div>
-							        {/* END PROFILE PICTURE UPLOAD */}
-							      </div>
-
-							      <div className="row">
-							      	{/* FIRST NAME FIELD */}
-							        <div className="input-field col s6">
-							          <input id="first_name" type="text" className="validate" />
-							          <label for="first_name">First Name</label>
-							        </div>
-							        {/* END FIRST NAME FIELD */}
-
-							        {/* LAST NAME FIELD */}
-							        <div className="input-field col s6">
-							          <input id="last_name" type="text" className="validate" />
-							          <label for="last_name">Last Name</label>
-							        </div>
-							        {/* END LAST NAME FIELD */}
-							      </div>
-
-							      <div className="row">
-							      	{/* SUMMARY FIELD */}
-							        <div className="input-field col s12">
-							          <input id="last_name" type="text" className="validate" />
-							          <label for="last_name">Last Name</label>
-							        </div>
-							        {/* END SUMMARY FIELD */}
-							      </div>
-
-							      <br />
-										
-										{/* SUBMIT BUTTON */}
-										<div className="row">
-											<button className="btn-large waves-effect waves-light" type="submit" name="action">
-												Submit
-										  </button>
-									  </div>
-										{/* END SUBMIT BUTTON */}
-
-							    </form>	
-								</div>
-
-					</Modal>
-					{/* END EDIT ICON */}
-
 				</div>
 
 				<div className="row">

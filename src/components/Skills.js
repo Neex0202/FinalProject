@@ -27,7 +27,7 @@ class Skills extends React.Component {
 									</div>
 									
 								}> 
-								<p><strong>ADD A SKILL NAME AND INPUT YOUR PROFICIENCY IN THAT SKILL</strong></p>
+								<p><strong>ADD A SKILL NAME AND INPUT YOUR PROFICIENCY IN THAT SKILL (rounded up by five)</strong></p>
 
 
 								<div className="row">
