@@ -61,7 +61,7 @@ class Intro extends React.Component {
 							          <input id="first_name" type="text" className="validate" />
 							          <label for="first_name">First Name</label>
 							        </div>
-							        {/* END  FIRST NAME FIELD */}
+							        {/* END FIRST NAME FIELD */}
 
 							        {/* LAST NAME FIELD */}
 							        <div className="input-field col s6">

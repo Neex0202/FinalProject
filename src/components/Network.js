@@ -26,10 +26,25 @@ class Network extends React.Component {
 								</div>
 								
 							}> 
-							<p>MODAL CONTENT</p>
-
+							
 							<div className="row">
 							    <form className="col s12">
+
+							    	<div className="row">
+							      	{/* PROFILE PICTURE UPLOAD */}
+							        <div className="input-field col s12">
+							          <div className="file-field input-field">
+										      <div className="btn red lighten-1">
+										        <span> &nbsp; &nbsp; &nbsp; &nbsp; Choose Profile Picture &nbsp; &nbsp; &nbsp; &nbsp; </span>
+										        <input type="file" />
+										      </div>
+										      <div className="file-path-wrapper">
+										        <input className="file-path validate" type="text" />
+										      </div>
+										    </div>
+							        </div>
+							        {/* END PROFILE PICTURE UPLOAD */}
+							      </div>
 
 							      <div className="row">
 							      	{/* FIRST NAME FIELD */}
@@ -37,7 +52,7 @@ class Network extends React.Component {
 							          <input id="first_name" type="text" className="validate" />
 							          <label for="first_name">First Name</label>
 							        </div>
-							        {/* END  FIRST NAME FIELD */}
+							        {/* END FIRST NAME FIELD */}
 
 							        {/* LAST NAME FIELD */}
 							        <div className="input-field col s6">
@@ -47,6 +62,16 @@ class Network extends React.Component {
 							        {/* END LAST NAME FIELD */}
 							      </div>
 
+							      <div className="row">
+							      	{/* SUMMARY FIELD */}
+							        <div className="input-field col s12">
+							          <input id="last_name" type="text" className="validate" />
+							          <label for="last_name">Last Name</label>
+							        </div>
+							        {/* END SUMMARY FIELD */}
+							      </div>
+
+							      <br />
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
@@ -55,7 +80,7 @@ class Network extends React.Component {
 										  </button>
 									  </div>
 										{/* END SUBMIT BUTTON */}
-										
+
 							    </form>	
 								</div>
 

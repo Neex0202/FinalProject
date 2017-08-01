@@ -27,26 +27,28 @@ class Skills extends React.Component {
 									</div>
 									
 								}> 
-								<p><strong>ADD A SKILL NAME AND INPUT YOUR EFFICIENCY IN THAT SKILL</strong></p>
+								<p><strong>ADD A SKILL NAME AND INPUT YOUR PROFICIENCY IN THAT SKILL</strong></p>
 
 
 								<div className="row">
 							    <form className="col s12">
 
 							      <div className="row">
-							      	{/* FIRST NAME FIELD */}
+							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
 							          <label for="skill_name">Skill Name</label>
 							        </div>
-							        {/* END  FIRST NAME FIELD */}
+							        {/* END SKILL NAME FIELD */}
 
-							        {/* LAST NAME FIELD */}
-							        <div className="input-field col s6">
-							          <input id="last_name" type="text" className="validate" />
-							          <label for="last_name">Last Name</label>
+							        {/* SKILL EFFICIENCY INPUT */}
+							        <div className="input-field col s10">
+							        	<br />
+							          <p class="range-field">
+										      <input type="range" id="test5" min="0" max="100" />
+										    </p>
 							        </div>
-							        {/* END LAST NAME FIELD */}
+							        {/* END SKILL EFFICIENCY INPUT */}
 							      </div>
 
 							      <br />

@@ -18,7 +18,7 @@ class Projects extends React.Component {
 
 					{/* EDIT ICON */}
 					<Modal
-							header='Modal Title'
+							header='Add/Edit Recent Projects'
 							fixedFooter
 							trigger={
 								<div className="col s4 right-align">
@@ -26,27 +26,54 @@ class Projects extends React.Component {
 								</div>
 								
 							}> 
-							<p>MODAL CONTENT</p>
 
 							<div className="row">
 							    <form className="col s12">
 
+							    	
+
+							      <div className="row">
+							      	{/* SUMMARY FIELD */}
+							        <div className="input-field col s12">
+							          <input id="project_title" type="text" className="validate" />
+							          <label for="project_title">Project Title</label>
+							        </div>
+							        {/* END SUMMARY FIELD */}
+							      </div>
+
+							      <div className="row">
+							      	{/* PROFILE PICTURE UPLOAD */}
+							        <div className="input-field col s12">
+							          <div className="file-field input-field">
+										      <div className="btn red lighten-1">
+										        <span> &nbsp; &nbsp; &nbsp; Add Project Screenshot &nbsp; &nbsp; &nbsp; </span>
+										        <input type="file" />
+										      </div>
+										      <div className="file-path-wrapper">
+										        <input className="file-path validate" type="text" />
+										      </div>
+										    </div>
+							        </div>
+							        {/* END PROFILE PICTURE UPLOAD */}
+							      </div>
+
 							      <div className="row">
 							      	{/* FIRST NAME FIELD */}
 							        <div className="input-field col s6">
-							          <input id="first_name" type="text" className="validate" />
-							          <label for="first_name">First Name</label>
+							          <input id="demo_link" type="text" className="validate" />
+							          <label for="demo_link">Demo Link</label>
 							        </div>
-							        {/* END  FIRST NAME FIELD */}
+							        {/* END FIRST NAME FIELD */}
 
 							        {/* LAST NAME FIELD */}
 							        <div className="input-field col s6">
-							          <input id="last_name" type="text" className="validate" />
-							          <label for="last_name">Last Name</label>
+							          <input id="github_link" type="text" className="validate" />
+							          <label for="github_link">GitHub Link</label>
 							        </div>
 							        {/* END LAST NAME FIELD */}
 							      </div>
 
+							      <br />
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
@@ -55,7 +82,7 @@ class Projects extends React.Component {
 										  </button>
 									  </div>
 										{/* END SUBMIT BUTTON */}
-										
+
 							    </form>	
 								</div>
 
