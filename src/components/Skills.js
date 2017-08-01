@@ -1,4 +1,5 @@
 import React from 'react';
+import {Button, Modal} from 'react-materialize';
 import helper from '../util/helper';
 
 
@@ -17,10 +18,19 @@ class Skills extends React.Component {
 						{/* END SKILL SECTION TITLE */}
 
 						{/* EDIT ICON */}
-						<div className="col s4 right-align">
-							<a href="#"><i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i></a>
-						</div>
+						<Modal
+								header='Modal Title'
+								fixedFooter
+								trigger={
+									<div className="col s4 right-align">
+										<a href="#"><i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i></a>
+									</div>
+									
+								}> <p>MODAL CONTENT</p>
+
+						</Modal>
 						{/* END EDIT ICON */}
+
 					</div>
 
 					{/* SKILL PROGRESS BAR*/}
