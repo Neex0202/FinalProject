@@ -111,7 +111,8 @@ h6 {
 
 #logo {
 	color: black;
-	font-family: 'Roboto', cursive;
+	font-family: 'Sedgwick Ave', cursive;
+	font-weight: bolder;
 }
 
 .nav-icon {
@@ -127,6 +128,8 @@ h6 {
 #search-bar {
 	width: 100px;
 }
+
+
 
 
 
