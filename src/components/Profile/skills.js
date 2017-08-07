@@ -4,6 +4,34 @@ import helper from '../../util/helper';
 
 
 class Skills extends React.Component {
+		constructor(props){
+		super(props);
+
+		this.state = {
+			skillName: "",
+			skillValue: ""
+		}//close State
+	}//close Constructor
+
+	// [
+	// 	{
+	// 		skillName: "",
+	// 		skillValue: ""
+	// 	}
+	// ]
+
+	handleChange = (event) => {
+		this.setState({
+			[event.target.name]: event.target.value,
+			[event.target.name]: event.target.value
+		})
+	}
+
+	addSkillSubmit = (event) =>{
+		event.preventDefault()
+		this.props.handleAddSkill(this.state.skillName, this.state.skillValue)
+	}
+
 
 	render() {
 		return (
@@ -85,6 +113,7 @@ class Skills extends React.Component {
 							          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
 							        </div>
 							        {/* END SKILL DELETE ICON */}
+
 							      </div>
 							    	{/* END SKILL TWO ROW */}
 
@@ -142,6 +171,7 @@ class Skills extends React.Component {
 							        </div>
 							        {/* END SKILL DELETE ICON */}
 							      </div>
+
 							    	{/* END SKILL FOUR ROW */}
 
 							      <br />
@@ -159,16 +189,27 @@ class Skills extends React.Component {
 
 								<hr />
 
+
 								{/* ADD NEW SKILL */}
 								<div className="row">
 								<p><strong>ADD ANY ADDITIONAL SKILLS</strong></p>
 							    <form className="col s12">
 
+
 							    	{/* SKILL ONE ROW */}
 							      <div className="row">
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s3">
-							          <input id="skill_name" type="text" className="validate" />
+
+							          <input
+							           id="skill_name" 
+							           type="text"
+							           className="validate" 
+							           onChange={this.handleChange}
+							           value = {this.state.skillName}
+							           name = "skillName"
+							          />
+
 							          <label for="skill_name">Add New Skill</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
@@ -177,7 +218,16 @@ class Skills extends React.Component {
 							        <div className="input-field col s9">
 							        	<br />
 							          <p class="range-field">
-										      <input type="range" id="test5" min="0" max="100" />
+
+										      <input type="range"
+										       id="test5"
+										       min="0" 
+										       max="100"
+										       onChange={this.handleChange}
+										       name ="skillValue" 
+										       value ={this.state.skillValue}
+										       />
+
 										    </p>
 							        </div>
 							        {/* END SKILL EFFICIENCY INPUT */}
@@ -189,7 +239,9 @@ class Skills extends React.Component {
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
-											<button className="btn-large blue lighten-1 waves-effect waves-light" type="submit" name="action">
+
+											<button className="btn-large blue lighten-1 waves-effect waves-light" type="submit" name="action" onClick={this.addSkillSubmit}>
+
 												ADD NEW SKILL
 										  </button>
 									  </div>
