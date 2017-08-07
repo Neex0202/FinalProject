@@ -27,7 +27,11 @@ class App extends Component {
 			idPic: "",
 			bio: "",
 			location: "",
-			skills: [],
+			skills: [ {
+			skillName: "",
+			skillValue: null
+		}
+			],
 			porfolio: [],
 			friends: []
 				
@@ -136,7 +140,7 @@ class App extends Component {
 
 		editIntro = (firstName, lastName, bio) => {
 		// event.preventDefault()
-		debugger
+		
 		console.log(this.state)
 		axios.put('/auth/user', {
 			firstName: firstName,
@@ -154,7 +158,7 @@ class App extends Component {
 			if (response.status === 200) {
 				axios.get("/auth/full-user", {
 				params:{
-					email: response.data.email
+					email: this.state.email
 				}}
 				).then(response2 => {
 					console.log("RESPONSE IN _getAfterDbUpdate")
@@ -178,6 +182,9 @@ class App extends Component {
 			// }
 		})
 	}//Close editIntro function
+
+
+
 
 
 
