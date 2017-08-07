@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, Chip } from 'react-materialize';
+import { Button, Modal, Chip, Dropdown, NavItem } from 'react-materialize';
 import helper from '../../util/helper';
 
 
@@ -45,12 +45,14 @@ class Header extends React.Component {
 							{/* END SEARCH BAR */}
 
 
-							{/* USER ICONS */}
 							<div className="col s4">
 					      <ul className="right hide-on-med-and-down">
+
+					      	{/* PROFILE ICON */}
 					      	<li><a href="#"><i className="fa fa-user nav-icon" aria-hidden="true"></i></a></li>
+					      	{/* PROFILE ICON */}
 
-
+					      	{/* MESSAGE ICON */}
 					      	<Modal
 										header='INBOX'
 										bottomSheet
@@ -66,36 +68,43 @@ class Header extends React.Component {
 												<div className="row message-row">
 													<div className="col s2 message-icon">
 														<Chip>
-															<img src='assets/img/network.jpg' alt='Contact Person' />
-															Jane Doe
+															<img src='assets/img/network-10.jpg' alt='Contact Person' />
+															Sarah Anderson
 														</Chip>
 													</div>
 													<div className="col s10 message-text">
-														<p><strong>HEY, I Really Like Your Work! Ever Collaborate...</strong></p>
+														<p><strong>HEY, I Really Like Your Work! I'm looking to collaborate with a 
+														good Front-End Developer if you're interested. Hope to hear back from you 
+														soon!</strong></p>
 													</div>
 												</div>
 
 												<div className="row message-row">
 													<div className="col s2 message-icon">
 														<Chip>
-															<img src='assets/img/network.jpg' alt='Contact Person' />
-															John Smith
+															<img src='assets/img/network-9.jpeg' alt='Contact Person' />
+															Frank Schmidt
 														</Chip>
 													</div>
 													<div className="col s10 message-text">
-														<p><strong>How You Doing Bud? It's been a while...</strong></p>
+														<p><strong>How You Doing Bud? It's been a while, we should meet up soon and 
+														catch up. There's a hackathon in the city next Saturday, you should totally
+														join... unless you're scared I'll beat you AGAIN</strong></p>
 													</div>
 												</div>
 
 												<div className="row message-row">
 													<div className="col s2 message-icon">
 														<Chip>
-															<img src='assets/img/network.jpg' alt='Contact Person' />
-															X Corp
+															<img src='assets/img/x-corp.jpg' alt='Contact Person' />
+															X Corporation
 														</Chip>
 													</div>
 													<div className="col s10 message-text">
-														<p><strong>This is Todd from X Corp, We have a job offer...</strong></p>
+														<p><strong>This is Todd from X Corp, We have a job offer you might be interested
+														in. One of our top developers Frank Schmidt highly recommended you. We would 
+														love a have a chat and tell you about the opening we have. Our office number is (646) 
+														555-1234, feel free to call anytime, thanks.</strong></p>
 													</div>
 												</div>
 
@@ -105,9 +114,76 @@ class Header extends React.Component {
 											</div>
 										</div>
 									</Modal>
+									{/* END MESSAGE ICON */}
 
 
-					        <li><a href="#"><i className="fa fa-cog nav-icon" aria-hidden="true"></i></a></li>
+									{/* SETTINGS ICON */}
+									<Dropdown trigger={
+										<li><a href="#"><i className="fa fa-cog nav-icon" aria-hidden="true"></i></a></li>
+										}>
+										<NavItem divider />
+										<i class="fa fa-sign-out nav-icon" aria-hidden="true"></i>
+										<NavItem>Sign Out</NavItem>
+										<NavItem divider />
+
+
+										<Modal
+											header='Edit Background Style'
+											fixedFooter
+											trigger={
+												<NavItem>Edit Style</NavItem>
+											}>
+												
+											<div className="row">
+										    <form className="col s12">
+
+										    	<div className="row">
+										    		<div className="col s4">
+										    		Pattern One
+										    		</div>
+
+										    		<div className="col s4">
+										    		Pattern Two
+										    		</div>
+
+										    		<div className="col s4">
+										    		Pattern Three
+										    		</div>										        
+										      </div>
+
+										      <div className="row">
+										    		<div className="col s4">
+										    		Pattern Four
+										    		</div>
+
+										    		<div className="col s4">
+										    		Pattern Five
+										    		</div>
+
+										    		<div className="col s4">
+										    		Pattern Six
+										    		</div>										        
+										      </div>
+
+										      <br />
+													
+													{/* SUBMIT BUTTON */}
+													<div className="row">
+														<button className="btn-large waves-effect waves-light" type="submit" name="action">
+															Submit
+													  </button>
+												  </div>
+													{/* END SUBMIT BUTTON */}
+
+										    </form>	
+											</div>
+										</Modal>
+
+
+									</Dropdown>
+								{/* END SETTINGS ICON */}
+      
+
 					      </ul>
 				      </div>
 				    	{/* END USER ICONS */}
