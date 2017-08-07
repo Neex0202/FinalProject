@@ -6,9 +6,11 @@ import Profile from './profile';
 class Background extends React.Component { 
 
 	render() {
+
+
 		return (
 
-			<div>
+			<div id={this.props.background}>
 				{/* TOP MARGIN */}
 				<div className="row">
 					<br /><br /><br /><br />

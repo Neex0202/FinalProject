@@ -36,8 +36,11 @@ var DeveloperSchema = new Schema({
 
 	portfolio: [
 		{
+		title: String
 		img: String,
-		url: String,
+		demoLink: String,
+		gitHubLink: String
+
 		}
 
 	],	

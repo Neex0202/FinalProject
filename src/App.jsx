@@ -32,8 +32,9 @@ class App extends Component {
 			skillValue: null
 		}
 			],
-			porfolio: [],
-			friends: []
+			portfolio: [],
+			friends: [],
+			// newPortfolio: []
 				
 
 		};  //Close State
@@ -121,12 +122,6 @@ class App extends Component {
 		})
 	}
 
-// _getAfterDbUpdate() {
-// 		axios.get("/auth/user").then(response => {
-// 			console.log("RESPONSE IN _getAfterDbUpdate")
-// 			console.log(response)
-// 		})
-// 	}
 
 	handleChange = (event) => {
 
@@ -171,21 +166,50 @@ class App extends Component {
 					})
 				})
 			}
-			
-			// if (response.status === 200) {
-			// 	this.setState({
-			// 		firstName: response.data.firstName,
-			// 		lastName: response.data.lastName,
-			// 		bio: response.data.bio,
-			// 		redirectTo: '/profile'
-			// 	})
-			// }
+
 		})
 	}//Close editIntro function
 
 
 
 
+editPortfolio = (title, img, demoLink, gitHubLink) => {
+		// event.preventDefault()
+		
+		console.log(this.state)
+		axios.put('/auth/portfolio', {
+			title: title,
+			img: img,
+			demoLink: bio,
+			gitHubLink: gitHubLink,
+			email: this.state.email
+
+		}).then(response => {			
+			console.log("///////////////////////////////")
+			console.log("Portfolio Updated")
+			console.log("///////////////////////////////")
+			console.log(response.data)
+		})
+};//close editPortfolio
+	// getAndPushPortfolio() = GET ROUTE
+
+
+	getAndPushPortfolio() = {
+		return axios.get("/auth/portfolio", {
+			params: {email:this.state.email}
+		}).then(response => {
+			console.log(response)
+			var newPortfolio =[]
+			for (i =0; i<response.data.portfolio.length; i++){
+				newPortfolio.push(res.data.porfolio[i])
+			}
+
+			this.setState({
+				portfolio: newPortfolio
+			})
+
+		})
+	} //close getAndPushPortfolio
 
 
 

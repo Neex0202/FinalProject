@@ -116,6 +116,25 @@ router.put('/user', (req, res) =>{
 
 })
 
+//put route for inputing Projects
+router.put('/portfolio', (req, res) =>{
+	console.log("//////////////////////////////")
+	console.log("ROUTE HIT!!!")
+	console.log("//////////////////////////////")
+	// console.log("")
+	console.log(req.body)
 
+	User.update({email: req.body.email}, { $push: {
+		title: req.body.title,
+		img: req.body.img,
+		demoLink: req.body.demoLink,
+		gitHubLink: req.body.gitHubLink
+	}}).exec(function(err, success){
+		if (err) throw err;
+		console.log("PORTFOLIO UPDATED!!!")
+		return res.json(success)
+	})//close .exec
+
+})//end .put
 
 module.exports = router
