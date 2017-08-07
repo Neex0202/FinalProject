@@ -113,6 +113,7 @@ class Skills extends React.Component {
 							          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
 							        </div>
 							        {/* END SKILL DELETE ICON */}
+
 							      </div>
 							    	{/* END SKILL TWO ROW */}
 
@@ -170,6 +171,7 @@ class Skills extends React.Component {
 							        </div>
 							        {/* END SKILL DELETE ICON */}
 							      </div>
+
 							    	{/* END SKILL FOUR ROW */}
 
 							      <br />
@@ -187,15 +189,18 @@ class Skills extends React.Component {
 
 								<hr />
 
+
 								{/* ADD NEW SKILL */}
 								<div className="row">
 								<p><strong>ADD ANY ADDITIONAL SKILLS</strong></p>
 							    <form className="col s12">
 
+
 							    	{/* SKILL ONE ROW */}
 							      <div className="row">
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s3">
+
 							          <input
 							           id="skill_name" 
 							           type="text"
@@ -204,6 +209,7 @@ class Skills extends React.Component {
 							           value = {this.state.skillName}
 							           name = "skillName"
 							          />
+
 							          <label for="skill_name">Add New Skill</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
@@ -212,6 +218,7 @@ class Skills extends React.Component {
 							        <div className="input-field col s9">
 							        	<br />
 							          <p class="range-field">
+
 										      <input type="range"
 										       id="test5"
 										       min="0" 
@@ -220,6 +227,7 @@ class Skills extends React.Component {
 										       name ="skillValue" 
 										       value ={this.state.skillValue}
 										       />
+
 										    </p>
 							        </div>
 							        {/* END SKILL EFFICIENCY INPUT */}
@@ -231,7 +239,9 @@ class Skills extends React.Component {
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
+
 											<button className="btn-large blue lighten-1 waves-effect waves-light" type="submit" name="action" onClick={this.addSkillSubmit}>
+
 												ADD NEW SKILL
 										  </button>
 									  </div>
