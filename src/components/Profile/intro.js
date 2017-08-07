@@ -1,9 +1,41 @@
 import React from 'react';
-import { Button, Modal, Chip } from 'react-materialize';
-import helper from '../../util/helper';
 
+import {Button, Modal} from 'react-materialize';
+// import helper from '../util/helper';
+// import axios from 'axios'
 
 class Intro extends React.Component {
+	constructor(props){
+		super(props);
+
+		this.state = {
+			skill1: props.firstName,
+			lastName: props.lastName,
+			bio: props.bio
+		}//close State
+	}//close Constructor
+
+	handleChange = (event) => {
+		// console.log(this)
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+
+	submit= (event) =>{
+		event.preventDefault()
+		this.props.editIntro(this.state.firstName, this.state.lastName, this.state.bio)
+	}
+
+	resetInput = (event) =>{
+		console.log("hit reset")
+			this.setState({
+			firstName: this.props.firstName,
+   lastName: this.props.lastName,
+   bio: this.props.bio
+		})//
+	}
+
 
 	render() {
 		return(
@@ -35,7 +67,9 @@ class Intro extends React.Component {
 								fixedFooter
 								trigger={
 									<div className="col s4 right-align">
-										<a href="#"><i className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i></a>
+
+										<i onClick={this.resetInput} className="fa fa-pencil-square-o edit-icon" aria-hidden="true"></i>
+
 									</div>
 								}>
 									
@@ -61,8 +95,17 @@ class Intro extends React.Component {
 							      <div className="row">
 							      	{/* FIRST NAME FIELD */}
 							        <div className="input-field col s6">
-							          <input id="first_name" type="text" className="validate" />
-							          <label for="first_name">First Name</label>
+
+							          <input
+								          id="first_name" 
+								          type="text" 
+								          className="validate" 
+								          name="firstName"
+								          value={this.state.firstName}
+								          onChange={this.handleChange}
+							          />
+							          <label htmlFor="first_name">First Name</label>
+
 							        </div>
 							        {/* END FIRST NAME FIELD */}
 
@@ -74,8 +117,8 @@ class Intro extends React.Component {
 							           type="text"
 							           className="validate"
 							           name="lastName"
-							           value={this.props.lastName}
-							           onChange={this.props.handleChange}
+							           value={this.state.lastName}
+							           onChange={this.handleChange}
 							            />
 							          <label htmlFor="last_name">Last Name</label>
 
@@ -91,11 +134,13 @@ class Intro extends React.Component {
 							           id="textarea1"
 							           className="materialize-textarea"
 							           name="bio"
-							           value={this.props.bio}
-							           onChange={this.props.handleChange}
+							           value={this.state.bio}
+							           onChange={this.handleChange}
 							           ></textarea>
 							          <label htmlFor="textarea1"
+
 							          value={this.props.bio}></label>
+
 
 							        </div>
 							        {/* END SUMMARY FIELD */}
@@ -106,7 +151,7 @@ class Intro extends React.Component {
 										{/* SUBMIT BUTTON */}
 										<div className="row">
 											<button className="btn-large waves-effect waves-light modal-close" type="submit" name="action"
-											onClick={this.props.editIntro}>
+											onClick={this.submit}>
 												Submit
 										  </button>
 									  </div>
@@ -143,36 +188,3 @@ class Intro extends React.Component {
 };
 
 export default Intro;
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~\\
- // NON ESSENTIAL FRONT-END JS \\
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
-
-//   constructor(){
-//   super();
-
-//   // Child has a state that follows the number of clicks
-//   this.state = {
-//     pic: null,
-//     name: null,
-//     location: null,
-//     bio: null
-//   };
-// } //close Constructor
-
-
-  //~~~~~~~~~~~~~~~~~~~~~~~~~~\\
- // NON ESSENTIAL FRONT-END JS \\
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\
-
-//   constructor(){
-//   super();
-
-//   // Child has a state that follows the number of clicks
-//   this.state = {
-//     pic: null,
-//     name: null,
-//     location: null,
-//     bio: null
-//   };
-// } //close Constructor
