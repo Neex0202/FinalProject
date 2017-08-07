@@ -18,11 +18,19 @@ class App extends Component {
 
 			//from MainForm
 			email: "",
+<<<<<<< HEAD
    password: "",
    firstName: "",
    lastName: "",
    signUpEmail:"",
    signUpPassword: "",
+=======
+			password: "",
+			firstName: "",
+			lastName: "",
+			signUpEmail:"",
+			signUpPassword: "",
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 			//PROFILE STATES
 			idPic: "",
 			bio: "",
@@ -30,8 +38,11 @@ class App extends Component {
 			skills: [],
 			porfolio: [],
 			friends: []
+<<<<<<< HEAD
 				
 
+=======
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 		};  //Close State
 
 		
@@ -124,7 +135,11 @@ class App extends Component {
 // 		})
 // 	}
 
+<<<<<<< HEAD
 	handleChange = (event) => {
+=======
+	handleChange = (event) => {	
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 		// console.log(this)
 		this.setState({
 			[event.target.name]: event.target.value
@@ -132,6 +147,7 @@ class App extends Component {
 	}
 
 
+<<<<<<< HEAD
 
 		editIntro = (event) => {
 		event.preventDefault()
@@ -172,6 +188,67 @@ class App extends Component {
 		})
 	}//Close editIntro function
 
+=======
+		editIntro = (firstName, lastName, bio) => {
+		// event.preventDefault()
+			debugger
+			console.log(this.state)
+			axios.put('/auth/user', {
+				firstName: firstName,
+				lastName: lastName,
+				bio: bio,
+				email: this.state.email
+				// location: this.state.location
+			}).then(response => {
+				console.log(response)
+				console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^")
+				console.log("Intro Updated")
+				console.log("_________________________________")
+
+				axios.get("/auth/fulluser", {
+				params:{
+					email: this.state.email
+				}}
+				).then(response2 => {
+					console.log("RESPONSE IN _getAfterDbUpdate")
+					console.log(response2)
+
+					this.setState({
+							firstName: firstName,
+							lastName: lastName,
+							bio: bio
+					})
+				})
+		})
+	}//Close editIntro function
+
+	handleAddSkill = (skillName, skillValue) => {
+		var skillArray = []
+
+		// skillArray.skillName = skillName
+		// skillArray.skillValue = skillValue
+
+		skillArray.push({skillName: skillName, skillValue: skillValue})
+		var name = skillArray[0].skillName
+		var value = skillArray[0].skillArray
+		var email = this.state.email
+		
+		axios.post('/auth/skills', {
+	    skills: 
+		    [
+			    skillName: name,
+			    value: value,
+			    email: email
+		    ]
+    } //end post DATA
+		).then(response => {
+			console.log(response.data)
+			console.log("DATA POSTED")
+		})
+
+	}
+
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 
 
 
@@ -183,7 +260,11 @@ class App extends Component {
 
 			return <Main handleChange={this.handleChange} editIntro={this.editIntro} idPic={this.state.idPic} firstName={this.state.firstName} lastName={this.state.lastName}
 			bio={this.state.bio} skills={this.state.skills} portfolio={this.state.portfolio} friends={this.state.friends}
+<<<<<<< HEAD
 			location={this.state.location}
+=======
+			location={this.state.location} handleAddSkill = {this.handleAddSkill}
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 			/>
 		}
 		

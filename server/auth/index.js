@@ -29,11 +29,19 @@ router.get('/user', (req, res, next) => {
 	}
 })
 
+<<<<<<< HEAD
 router.get('/full-user', (req, res, next) => {
 	console.log("FULL USER ROUTE")
 	console.log(req.params.email)
 
 	User.findOne({email: req.params.email}, function(err, result){
+=======
+router.get('/fulluser', (req, res, next) => {
+	console.log("FULL USER ROUTE")
+	console.log(req.query.email)
+
+	User.findOne({email: req.query.email}, function(err, result){
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 		console.log(result)
 		if (err) throw err;
 		if(result) return res.json(result)
@@ -108,7 +116,11 @@ router.put('/user', (req, res) =>{
 		console.log("////////////////////////////////")
 		console.log("FIRST NAME POSTED")
 		console.log("////////////////////////////////")
+<<<<<<< HEAD
 		console.log("------------------------------\n SUCESS RESPONSE")
+=======
+		console.log("------------------------------\n SUcCESS RESPONSE")
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 		console.log(success)
 		console.log("-----------------------------------\n")
 		return res.json(success)
@@ -116,6 +128,37 @@ router.put('/user', (req, res) =>{
 
 })
 
+<<<<<<< HEAD
+=======
+router.post('/skills', (req, res) =>{
+	console.log("ROUTE HIT!!!")
+
+	User.save(function(error, doc) {
+    // Send any errors to the browser
+    if (error) {
+      res.send(error);
+    }
+    else {
+      User.findOneAndUpdate(
+      	{
+      		email: req.body.email
+      	},
+      	{ $push: { "skillname": doc.skillName, "value": doc.skillValue} },
+      	 { new: true }, function(error, doc) {
+        // Send any errors to the browser
+        if (error) {
+          res.send(error);
+        }
+        // Or send the doc to the browser
+        else {
+          res.send(doc);
+        }
+      });
+    }
+  });
+})
+
+>>>>>>> dbfac0eb0acc1c14854d515ebdf19daafc1d29fb
 
 
 module.exports = router
