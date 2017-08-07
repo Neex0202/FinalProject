@@ -72,6 +72,13 @@ a {
 	color: black;
 }
 
+h6 {
+	color: black;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+}
+}
+
 
 
 /* LOGIN PAGE */
@@ -131,7 +138,7 @@ a {
 }
 
 .message-icon {
-	margin-top: 5px;
+	margin-top: 15px;
 }
 
 .message-text {
@@ -335,6 +342,14 @@ a {
 	width: 100%;
 }
 
-.homepage-div {
-	
+
+
+/* COMPANY PROFILE */
+.company-news {
+	margin-left: 12px;
+}
+
+.company-img {
+	height: 190px;
+	overflow: hidden;
 }
