@@ -41,7 +41,7 @@ class Skills extends React.Component {
 					<div className="row">
 						{/* SKILL SECTION TITLE */}
 						<div className="col s8 left-align">
-							<h5> SKILLS </h5>
+							<h5><strong> SKILLS </strong></h5>
 						</div>
 						{/* END SKILL SECTION TITLE */}
 
@@ -259,7 +259,7 @@ class Skills extends React.Component {
 					{/* SKILL PROGRESS BAR*/}
 					<div className="row skill-div">
 						<div className="col s1">
-							<h6>Skill 1</h6>
+							<h6><strong>Skill 1</strong></h6>
 						</div>
 						<div className="col s11">
 							<div className="progress">
@@ -275,7 +275,7 @@ class Skills extends React.Component {
 					{/* SKILL PROGRESS BAR*/}
 					<div className="row skill-div">
 						<div className="col s1">
-							<h6>Skill 2</h6>
+							<h6><strong>Skill 2</strong></h6>
 						</div>
 						<div className="col s11">
 							<div className="progress">

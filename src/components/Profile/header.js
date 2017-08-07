@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Modal, Chip, Dropdown, NavItem } from 'react-materialize';
+import { Button, Modal, Chip, Dropdown, NavItem, Input } from 'react-materialize';
 import helper from '../../util/helper';
 
 
@@ -138,30 +138,48 @@ class Header extends React.Component {
 										    <form className="col s12">
 
 										    	<div className="row">
-										    		<div className="col s4">
-										    		Pattern One
+										    		<div className="col s4 center-align">
+										    			<div className="pattern-form z-depth-3">
+											    			<img src="assets/img/pattern-1.png" className="responsive-img" />
+											    		</div>
+											    		<Input name='group1' type='radio' value='pattern_1' label='Pattern One' />
 										    		</div>
 
-										    		<div className="col s4">
-										    		Pattern Two
+										    		<div className="col s4 center-align">
+										    			<div className="pattern-form z-depth-3">
+										    				<img src="assets/img/pattern-2.jpg" className="responsive-img" />
+										    			</div>
+											    		<Input name='group1' type='radio' value='pattern_2' label='Pattern Two' />
 										    		</div>
 
-										    		<div className="col s4">
-										    		Pattern Three
+										    		<div className="col s4 center-align">
+										    			<div className="pattern-form z-depth-3">
+										    				<img src="assets/img/pattern-3.png" className="responsive-img" />
+										    			</div>
+											    		<Input name='group1' type='radio' value='pattern_3' label='Pattern Three' />
 										    		</div>										        
 										      </div>
 
 										      <div className="row">
-										    		<div className="col s4">
-										    		Pattern Four
+										    		<div className="col s4 center-align">
+										    			<div className="pattern-form z-depth-3">
+										    				<img src="assets/img/pattern-4.jpg" className="responsive-img" />
+										    			</div>
+											    		<Input name='group1' type='radio' value='pattern_4' label='Pattern Four' />
 										    		</div>
 
-										    		<div className="col s4">
-										    		Pattern Five
+										    		<div className="col s4 center-align">
+										    			<div className="pattern-form z-depth-3">
+										    				<img src="assets/img/pattern-5.png" className="responsive-img" />
+										    			</div>
+											    		<Input name='group1' type='radio' value='pattern_5' label='Pattern Five' />
 										    		</div>
 
-										    		<div className="col s4">
-										    		Pattern Six
+										    		<div className="col s4 center-align">
+										    			<div className="pattern-form z-depth-3">
+										    				<img src="assets/img/pattern-6.jpg" className="responsive-img" />
+										    			</div>
+											    		<Input name='group1' type='radio' value='pattern_6' label='Pattern Six' />
 										    		</div>										        
 										      </div>
 

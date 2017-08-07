@@ -56,7 +56,7 @@ class Intro extends React.Component {
 							<div className="col s8 left-align">
 
 
-								<h4 className="username">{this.props.firstName} {this.props.lastName}</h4>  {/*Change First Lastname to this.state || this.props.firstname && lastname*/}
+								<h4 className="username"><strong>{this.props.firstName} {this.props.lastName}</strong></h4>  {/*Change First Lastname to this.state || this.props.firstname && lastname*/}
 
 							</div>
 							{/* END USER NAME */}
@@ -189,7 +189,7 @@ class Intro extends React.Component {
 							{/* USER BIO */}
 
 							{/*Change Bio to this.props.bio or this.state.bio*/}
-							<p className="profile-bio">{this.props.bio}</p>
+							<p className="profile-bio"><strong>{this.props.bio}</strong></p>
 						{/* END USER BIO */}
 
 						</div>
