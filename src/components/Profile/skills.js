@@ -4,8 +4,8 @@ import helper from '../../util/helper';
 
 
 class Skills extends React.Component {
-		constructor(props){
-		super(props);
+		constructor(){
+		super();
 
 		this.state = {
 			skillName: "",
@@ -13,12 +13,9 @@ class Skills extends React.Component {
 		}//close State
 	}//close Constructor
 
-	// [
-	// 	{
-	// 		skillName: "",
-	// 		skillValue: ""
-	// 	}
-	// ]
+	componentWillMount(){
+		this.props.getInitialSkills()
+	}
 
 	handleChange = (event) => {
 		this.setState({
@@ -29,11 +26,40 @@ class Skills extends React.Component {
 
 	addSkillSubmit = (event) =>{
 		event.preventDefault()
+
+		console.log("clicked")
+		console.log(this.props)
 		this.props.handleAddSkill(this.state.skillName, this.state.skillValue)
 	}
-
-
+	
 	render() {
+		// skill is the value of the current element
+  	// 	i is the array index of the current element
+  	var percentage = "%"
+
+		var renderSkills = this.props.skills.map((skill, i) => {
+			var skillValue = skill.value.toString()
+			var Style= {
+				width: skillValue.concat(percentage)
+			}
+			return (
+				<div className="row skill-div" id={i} key={i}>
+					<div className="col s1">
+						<h6>{skill.skillName}</h6>
+					</div>
+					<div className="col s11">
+						<div className="progress">
+						  <div className="progress-bar progress-bar-success" role="progressbar" 
+						  aria-valuenow={skill.value} aria-valuemin="0" aria-valuemax="100" style ={Style}>
+						    <span className="sr-only"></span>
+						  </div>
+						</div>
+					</div>
+				</div>
+			)
+		})//close map function
+
+
 		return (
 
 			<div>
@@ -66,7 +92,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill One</label>
+							          <label htmlFor="skill_name">Skill One</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -94,7 +120,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill Two</label>
+							          <label htmlFor="skill_name">Skill Two</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -113,7 +139,6 @@ class Skills extends React.Component {
 							          <a href="#"><i className="fa fa-times delete-icon" aria-hidden="true"></i></a>
 							        </div>
 							        {/* END SKILL DELETE ICON */}
-
 							      </div>
 							    	{/* END SKILL TWO ROW */}
 
@@ -123,7 +148,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill Three</label>
+							          <label htmlFor="skill_name">Skill Three</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -151,7 +176,7 @@ class Skills extends React.Component {
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s2">
 							          <input id="skill_name" type="text" className="validate" />
-							          <label for="skill_name">Skill Four</label>
+							          <label htmlFor="skill_name">Skill Four</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -171,7 +196,6 @@ class Skills extends React.Component {
 							        </div>
 							        {/* END SKILL DELETE ICON */}
 							      </div>
-
 							    	{/* END SKILL FOUR ROW */}
 
 							      <br />
@@ -189,18 +213,15 @@ class Skills extends React.Component {
 
 								<hr />
 
-
 								{/* ADD NEW SKILL */}
 								<div className="row">
 								<p><strong>ADD ANY ADDITIONAL SKILLS</strong></p>
 							    <form className="col s12">
 
-
 							    	{/* SKILL ONE ROW */}
 							      <div className="row">
 							      	{/* SKILL NAME FIELD */}
 							        <div className="input-field col s3">
-
 							          <input
 							           id="skill_name" 
 							           type="text"
@@ -209,8 +230,7 @@ class Skills extends React.Component {
 							           value = {this.state.skillName}
 							           name = "skillName"
 							          />
-
-							          <label for="skill_name">Add New Skill</label>
+							          <label htmlFor="skill_name">Add New Skill</label>
 							        </div>
 							        {/* END SKILL NAME FIELD */}
 
@@ -218,7 +238,6 @@ class Skills extends React.Component {
 							        <div className="input-field col s9">
 							        	<br />
 							          <p class="range-field">
-
 										      <input type="range"
 										       id="test5"
 										       min="0" 
@@ -227,7 +246,6 @@ class Skills extends React.Component {
 										       name ="skillValue" 
 										       value ={this.state.skillValue}
 										       />
-
 										    </p>
 							        </div>
 							        {/* END SKILL EFFICIENCY INPUT */}
@@ -239,9 +257,7 @@ class Skills extends React.Component {
 										
 										{/* SUBMIT BUTTON */}
 										<div className="row">
-
-											<button className="btn-large blue lighten-1 waves-effect waves-light" type="submit" name="action" onClick={this.addSkillSubmit}>
-
+											<button className="btn-large blue lighten-1 waves-effect waves-light" type="submit" name="action" onClick= {this.addSkillSubmit}>
 												ADD NEW SKILL
 										  </button>
 									  </div>
@@ -256,71 +272,11 @@ class Skills extends React.Component {
 
 					</div>
 
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 1</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-success fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete (success)</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
 
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 2</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-info fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
-
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 3</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-warning fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete (warning)</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
-
-					{/* SKILL PROGRESS BAR*/}
-					<div className="row skill-div">
-						<div className="col s1">
-							<h6>Skill 4</h6>
-						</div>
-						<div className="col s11">
-							<div className="progress">
-							  <div className="progress-bar progress-bar-danger fifty" role="progressbar" 
-							  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-							    <span className="sr-only">50% Complete (danger)</span>
-							  </div>
-							</div>
-						</div>
-					</div>
-					{/* END SKILL PROGRESS BAR */}
 				</div>
 
+				{renderSkills}
+				
 				<hr />
 				<br />
 			</div>

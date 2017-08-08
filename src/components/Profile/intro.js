@@ -11,7 +11,8 @@ class Intro extends React.Component {
 		this.state = {
 			skill1: props.firstName,
 			lastName: props.lastName,
-			bio: props.bio
+			bio: props.bio,
+			pic: "assets/img/user-placeholder.jpg"
 		}//close State
 	}//close Constructor
 
@@ -25,17 +26,26 @@ class Intro extends React.Component {
 	submit= (event) =>{
 		event.preventDefault()
 		this.props.editIntro(this.state.firstName, this.state.lastName, this.state.bio)
+		this.setState({
+			pic: "/assets/img/network-11.jpg"
+		})
 	}
 
-	resetInput = (event) =>{
-		console.log("hit reset")
-			this.setState({
-			firstName: this.props.firstName,
-   lastName: this.props.lastName,
-   bio: this.props.bio
-		})//
+	resetInput = (event) => {
+    console.log("hit reset")
+    this.setState({
+        firstName: this.props.firstName,
+        lastName: this.props.lastName,
+        bio: this.props.bio
+    }) //
 	}
 
+	handleInputPic = (event) => {
+		event.preventDefault();
+		console.log("hit input for picture")
+		this.props.handlePicture()
+
+	}
 
 	render() {
 		return(
@@ -44,7 +54,10 @@ class Intro extends React.Component {
 				<div className="row">
 					{/* PROFILE PIC */}
 					<div className="col s4 center-align">
-						<img src="assets/img/user-placeholder.jpg" alt="" className="circle responsive-img profile-pic z-depth-2" />
+						<img src={this.state.pic}
+						 alt="" 
+						 className="circle responsive-img profile-pic z-depth-2" 
+						 />
 					</div>
 					{/* END PROFILE PIC* /}
 
@@ -85,7 +98,12 @@ class Intro extends React.Component {
 										        <input type="file" />
 										      </div>
 										      <div className="file-path-wrapper">
-										        <input className="file-path validate" type="text" />
+										        <input 
+										        	className="file-path validate" 
+										        	type="text"
+										        	value= ""
+										        	onChange = {this.handleInputPic}
+										        	 />
 										      </div>
 										    </div>
 							        </div>
